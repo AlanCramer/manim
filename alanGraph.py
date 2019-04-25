@@ -20,17 +20,17 @@ class Graphing(GraphScene):
         # Make graph
         self.setup_axes(animate=False)
 
-        funCt = 3;
+        funCt = 2;
 
         funcs = [self.make_func(i+1) for i in range(funCt)]
 
         func_graphs = [self.get_graph(func) for func in funcs]
 
-        func_graph_sum=self.get_graph(self.make_sum(funcs), GREEN)
+        func_graph_sum = self.get_graph(self.make_sum(funcs), GREEN)
 
         # Display graph
         for func_graph in func_graphs:
-            self.play(ShowCreation(func_graph, run_time=2))
+            self.play(ShowCreation(func_graph, run_time=5/funCt))
 
         self.wait(1)
 
